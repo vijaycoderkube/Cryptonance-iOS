@@ -1,0 +1,81 @@
+/* 
+  Localizable.strings
+ Cryptonance
+
+  Created by Dhruv Jariwala on 21/10/22.
+  
+*/
+
+"APP_TITLE" = "Cryptonance";
+"SIGN_IN" = "Sign In";
+"GET_FREE_CRYPTOCURRENCY_FOR_GETTING_STARTED" = "Get free cryptocurrency for getting Started";
+"GET_FREE" = "Get free";
+"CRYPTOCURRENCY" = "cryptocurrency";
+"FOR_GETTING" = "for getting";
+"STARTED" = "Started";
+"CREATE_FREE_ACCOUNT" = "Create free account";
+"SIGN_UP" = "Sign Up";
+"PHONE_NUMBER" = "Phone number";
+"PASSWORD" = "Password";
+"BY_CONTINUING_YOU_AGREE_TO_THE_CRYPTONANCE_TERMS_AND_CONDITIONS_AND_PRIVACY_POLICY" = "By continuing, you agree to the Cryptonance Terms & Conditions and Privacy Policy";
+"BY_CONTINUING_YOU_AGREE_TO_THE" = "By continuing, you agree to the ";
+"CRYPTONANCE" = "Cryptonance ";
+"TERMS_AND_CONDITIONS" = "Terms & Conditions";
+"AND" = " and ";
+"PRIVACY_POLICY" = "Privacy Policy";
+"CONTINUE" = "Continue";
+"ALREADY_HAVE_AN_ACCOUNT" = "already have an account? ";
+"SIGN_IN" = "Sign In";
+"DON’T_HAVE_AN_ACCOUNT" = "don’t have an account? ";
+"ENTER_YOUR_VERIFICATION_CODE" = "Enter your verification code";
+"PLEASE_ENTER_THE_6_DIGIT_VERIFICATION_CODE_SENT_TO" = "Please enter the 6-digit verification code sent to ";
+"THE_CODE_IS_VALID_FOR_30MINS" = "The code is valid for 30mins.";
+"VERIFICATION_CODE_SENT" = "Verification code sent";
+"DIDN’T_RECEIVE_IT" = "Didn’t receive it? ";
+"RESEND" = "Resend";
+"JUST_TWO_MORE_STEPS" = "Just two more steps!";
+"THANKS_FOR_UPDATE_YOUR_DETAILS" = "Thanks for update your details!";
+"ACCOUNT_CREATED" = "Account created";
+"PERSONAL_DETAILS" = "Personal Details";
+"IDENTITY_VERIFICATION" = "Identity Verification";
+"UNDER_VERIFY" = "Under Verify";
+"PLEASE_FILL_SOME_PERSONAL_DETAILS_PROCEED_TO_COMPLETE_IDENTIY_VERIFICATION" = "Please fill some personal details proceed to complete identiy verification.";
+"NATIONALITY" = "Nationality";
+"USERNAME" = "Username";
+"DATE_OF_BIRTH" = "Date of birth";
+"DONE" = "Done";
+"CANCEL" = "Cancel";
+"ADDRESS" = "Address";
+"CITY" = "City";
+"PINCODE" = "Pincode";
+"PAN_NUMBER" = "PAN number";
+"VERIFY_NOW" = "Verify Now";
+"PINCODE_HINT" = "eg. 395001";
+"PAN_NUMBER_HINT" = "eg. JUV3965J7455";
+"WELCOME_AGAIN" = "Welcome again!";
+"I_WANT_TO_SELL" = "I want to Sell";
+"I_WANT_TO_BUY" = "I want to Buy";
+"TOTAL_BALANCE" = "Total Balance";
+"MAIN_WALLET" = "Main Wallet";
+
+"ENTER_PHONE_NO" = "Enter Phone Number!";
+"ENTER_PASSWORD" = "Enter Password!";
+"ENTER_VERIFICATION_CODE" = "Enter Verification Code!";
+"ENTER_USERNAME" = "Enter Username!";
+"SELECT_DATE_OF_BIRTH" = "Select Date of Birth!";
+"ENTER_ADDRESS" = "Enter Address!";
+"ENTER_CITY" = "Enter City!";
+"ENTER_PINCODE" = "Enter Pincode!";
+"ENTER_PAN_NO" = "Enter PAN No!";
+"PHONE_NO_SHOULD_BE_10_DIGIT_LONG" = "Phone number should be 10 digit long!";
+"YOU_HAVE_BEEN_LOGGED_OUT" = "You have been logged out.";
+"OK" = "Ok";
+
+"SCAN_QR_CODE" = "Scan QR Code";
+"ALIGN_QR_CODE_WITHIN_FRAME_TO_SCAN" = "Align QR code within frame to scan";
+"UPLOAD_FROM_PHOTOS" = "Upload from photos";
+"INVALID_QR_CODE" = "Invalid QR Code";
+"SEARCH" = "Search";
+"INTERNET_CONNECTION_LOST" = "Internet connection Lost";
+"PLEASE_CHECK_YOUR_INTERNET_CONNECTION" = "Please, Check your internet connection!";
+"SETTINGS" = "Settings";

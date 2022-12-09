@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="poppins-regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerViewController" customModule="Cryptonance" customModuleProvider="target">
+            <connections>
+                <outlet property="datePicker" destination="bOm-JK-eRW" id="b5p-j3-tY0"/>
+                <outlet property="datePickerBGView" destination="gwB-IY-DBJ" id="pKe-Mh-73R"/>
+                <outlet property="headerView" destination="enB-1g-OMx" id="7z9-wV-Luv"/>
+                <outlet property="pickerCancelButton" destination="2GJ-eh-gLB" id="41I-X3-ucS"/>
+                <outlet property="pickerDoneButton" destination="grh-R8-Fki" id="jSq-Ff-8ua"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1F-Yc-RVq">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwB-IY-DBJ">
+                            <rect key="frame" x="0.0" y="396" width="414" height="500"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enB-1g-OMx">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GJ-eh-gLB">
+                                            <rect key="frame" x="15" y="0.0" width="63" height="50"/>
+                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="CANCEL">
+                                                <color key="titleColor" systemColor="labelColor"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="CANCEL"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="pickerCancelButtonAction:" destination="-1" eventType="touchUpInside" id="T8v-4W-qF2"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grh-R8-Fki">
+                                            <rect key="frame" x="356" y="0.0" width="43" height="50"/>
+                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="DONE">
+                                                <color key="titleColor" systemColor="labelColor"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="DONE"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="pickerDoneButtonAction:" destination="-1" eventType="touchUpInside" id="Kat-Br-2Ng"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" name="themeYellow"/>
+                                    <constraints>
+                                        <constraint firstItem="2GJ-eh-gLB" firstAttribute="top" secondItem="enB-1g-OMx" secondAttribute="top" id="0VK-ob-7mC"/>
+                                        <constraint firstAttribute="height" constant="50" id="5ih-VW-yH9">
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="heightPercentage">
+                                                    <real key="value" value="5.9199999999999999"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </constraint>
+                                        <constraint firstAttribute="trailing" secondItem="grh-R8-Fki" secondAttribute="trailing" constant="15" id="9KT-wW-Qzr"/>
+                                        <constraint firstAttribute="bottom" secondItem="grh-R8-Fki" secondAttribute="bottom" id="QHI-Kb-98o"/>
+                                        <constraint firstItem="2GJ-eh-gLB" firstAttribute="leading" secondItem="enB-1g-OMx" secondAttribute="leading" constant="15" id="bp6-Iv-XCu"/>
+                                        <constraint firstItem="grh-R8-Fki" firstAttribute="top" secondItem="enB-1g-OMx" secondAttribute="top" id="voA-bH-maN"/>
+                                        <constraint firstAttribute="bottom" secondItem="2GJ-eh-gLB" secondAttribute="bottom" id="xP3-b3-6YJ"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="bOm-JK-eRW">
+                                    <rect key="frame" x="8" y="50" width="398" height="450"/>
+                                    <color key="backgroundColor" name="ButtonTitleColor - 141414"/>
+                                    <color key="tintColor" name="themeYellow"/>
+                                    <date key="minimumDate" timeIntervalSinceReferenceDate="-3187255870">
+                                        <!--1900-01-01 11:08:50 +0000-->
+                                    </date>
+                                </datePicker>
+                            </subviews>
+                            <color key="backgroundColor" name="ThemeWhite - F2F2F2"/>
+                            <constraints>
+                                <constraint firstItem="enB-1g-OMx" firstAttribute="top" secondItem="gwB-IY-DBJ" secondAttribute="top" id="3jG-ug-AeB"/>
+                                <constraint firstAttribute="height" constant="500" id="U8I-dH-w86">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="heightPercentage">
+                                            <real key="value" value="59.241"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </constraint>
+                                <constraint firstItem="enB-1g-OMx" firstAttribute="leading" secondItem="gwB-IY-DBJ" secondAttribute="leading" id="VzB-sQ-khG"/>
+                                <constraint firstItem="bOm-JK-eRW" firstAttribute="top" secondItem="enB-1g-OMx" secondAttribute="bottom" id="YeL-cv-r7H"/>
+                                <constraint firstItem="bOm-JK-eRW" firstAttribute="leading" secondItem="gwB-IY-DBJ" secondAttribute="leading" constant="8" id="fWs-r9-5Ij"/>
+                                <constraint firstAttribute="bottom" secondItem="bOm-JK-eRW" secondAttribute="bottom" id="h9m-Wd-Vor"/>
+                                <constraint firstAttribute="trailing" secondItem="enB-1g-OMx" secondAttribute="trailing" id="jKV-nL-MQj"/>
+                                <constraint firstAttribute="trailing" secondItem="bOm-JK-eRW" secondAttribute="trailing" constant="8" id="pN2-YC-TMG"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="gwB-IY-DBJ" secondAttribute="bottom" id="R3Z-aW-5Dw"/>
+                        <constraint firstItem="gwB-IY-DBJ" firstAttribute="leading" secondItem="m1F-Yc-RVq" secondAttribute="leading" id="pXR-2C-EkW"/>
+                        <constraint firstAttribute="trailing" secondItem="gwB-IY-DBJ" secondAttribute="trailing" id="xJP-7H-MlD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="m1F-Yc-RVq" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0E5-0j-Sdc"/>
+                <constraint firstItem="m1F-Yc-RVq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="E11-q2-Y7t"/>
+                <constraint firstAttribute="bottom" secondItem="m1F-Yc-RVq" secondAttribute="bottom" id="Wcs-6I-MMM"/>
+                <constraint firstItem="m1F-Yc-RVq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="etu-TM-I3o"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="62"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="ButtonTitleColor - 141414">
+            <color red="0.078000001609325409" green="0.078000001609325409" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ThemeWhite - F2F2F2">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="themeYellow">
+            <color red="1" green="0.83899998664855957" blue="0.039000000804662704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
