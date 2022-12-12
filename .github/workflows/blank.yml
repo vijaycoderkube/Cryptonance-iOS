@@ -4,36 +4,36 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
+    # Triggers the workflow on push or pull request events but only for the "main" branch
+    push:
     branches: [ "main" ]
-  pull_request:
+    pull_request:
     branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+    # This workflow contains a single job called "build"
+    build:
     # The type of runner that the job will run on
     runs-on: macos-latest
-
+    
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@master
-
-      # Runs a single command using the runners shell
-      - name: Build
-    run: |
-       xcodebuild clean build -project Cryptonance.xcodeproj -scheme Cryptonance -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
-    env:
-      destination: ${{ matrix.destination }}
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@master
+        
+        # Runs a single command using the runners shell
+        - name: iOS app
+        run: xcodebuild -scheme "Cryptonance" clean archive -archivePath "Actions" -configuration "Release Production"
+        
+        - name: export ipa
+        env:
+            EXPORT_PLIST: ${{ secrets.IOS_EXPORT_PRODUCTION }}
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+           
+        EXPORT_PLIST_PATH=$RUNNER_TEMP/ExportOptions.plist
+        echo -n "$EXPORT_PLIST" | base64 --decode --output $EXPORT_PLIST_PATH
+        xcodebuild -exportArchive -archivePath $GITHUB WORKSPACE/Cryptonance.xcarchive -exportOptionsPlist $EXPORT_PLIST_PATH -exportPath $RUNNER_TEMP/export
