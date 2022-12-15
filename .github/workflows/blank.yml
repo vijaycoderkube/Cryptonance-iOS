@@ -18,50 +18,24 @@ jobs:
     # This workflow contains a single job called "build"
     build_ios:
     # The type of runner that the job will run on
-    runs-on: [ self-hosted, ios ]
+    runs-on: macos-latest
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v1
         
         # Runs a single command using the runners shell
         - name: iOS app
-        run: xcodebuild -scheme "Cryptonance" clean archive -archivePath "Actions" -configuration "Release Production"
+        run: xcodebuild -scheme "Cryptonance" clean archive -archivePath "Cryptonance" -configuration "Release Production"
         
         - name: export ipa
         env:
             EXPORT_PLIST: ${{ secrets.IOS_EXPORT_PRODUCTION }}
         run: |
             # crete export options
-            EXPORT_PLIST_PATH=$RUNNER_TEMP/ExportOptions.plist
+        EXPORT_PLIST_PATH=$RUNNER_TEMP/ExportOptions.plist
             echo -n "$EXPORT_PLIST" | base64 --decode --output $EXPORT_PLIST_PATH
             xcodebuild -exportArchive -archivePath $GITHUB WORKSPACE/Cryptonance.xcarchive -exportOptionsPlist $EXPORT_PLIST_PATH -exportPath $RUNNER_TEMP/export
              
-        # - name: Upload iPA
-        # uses: actions/upload-artifact@master
-        # with:
-        # path: /Users/cobemacmini/ios-runner/_work/_temp/export/
-        
-        - name: Rename the file, remove whitespace
-          run: |
-            echo Export directory contents:
-            ls /Users/cobemacmini/ios-runner/_work/_temp/export/
-            mv "/Users/cobemacmini/ios-runner/_work/_temp/export/Actions Production.ipa" "/Users/cobemacmini/ios-runner/_work/_temp/export/Actions Production.ipa"
-            ls /Users/cobemacmini/ios-runner/_work/_temp/export/
-        
-        - name: Decode auth. api key file and save it
-          env:
-            API_KEY_BASE64: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
-          run: |
-            ls ~/private_keys
-            echo -n "$API_KEY_BASE64" | base64 --decode --output ~/private_keys/Authkey_${{ secrets.APPSTORE_API_KEY_ID }}.p8
-            echo "After saving: "
-            ls ~/private_keys
-        
-        - name: "Upload file to test flight using CLI"
-        run: |
-            echo "Starting upload. "
-            ls ~/private_keys
-            xcrun altool --validate-app -f /Users/cobemacmini/ios-runner/_work/_temp/export/Actions Production.ipa -t ios --apikey ${{ secrets.APPSTORE_API_KEY_ID }}
-            xcrun altool --upload-app -f /Users/cobemacmini/ios-runner/_work/_temp/export/ActionsProduction.ipa -t ios --apikey "${{ secrets.APPSTORE_API_KEY_ID }}"
+
