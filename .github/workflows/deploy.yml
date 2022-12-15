@@ -27,4 +27,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: iOS app
-        run: xcodebuild -scheme "Cryptonance" clean archive -archivePath "/Volumes/HDD/Vijay Parmar iOS/GithubProject/Cryptonance-iOS/GithubCryptoIPA/Cryptonance.xcarchive" \-exportProvisioningProfile ${{ secrets.IOS_PROVISION_PRODUCTION }}
+        run: xcodebuild clean build -workspace "Cryptonance.xcworkspace" -scheme "Cryptonance" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED="NO" | xcpretty --c
+
