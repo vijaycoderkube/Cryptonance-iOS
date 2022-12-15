@@ -27,14 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: iOS app
-        run: xcodebuild -scheme "Cryptonance" clean archive -archivePath "CryptonanceActions" -configuration "Cryptonance"
-
-      # Runs a set of commands using the runners shell
-      - name: export ipa
-        env:
-          EXPORT_PLIST: ${{ secrets.IOS_EXPORT_PRODUCTION }}
-        run: |
-          # crete export options
-        EXPORT_PLIST_PATH=/Volumes/HDD/Vijay Parmar iOS/GithubProject/Cryptonance-iOS/CryptonanceIPA/ExportOptions.plist
-        echo -n "$EXPORT_PLIST" | base64 --decode --output $EXPORT_PLIST_PATH
-        xcodebuild -exportArchive -archivePath $GITHUB WORKSPACE/Cryptonance.xcarchive -exportOptionsPlist $EXPORT_PLIST_PATH -exportPath $RUNNER_TEMP/export
+        run: xcodebuild -scheme "Cryptonance" clean archive -archivePath "/Volumes/HDD/Vijay Parmar iOS/GithubProject/Cryptonance-iOS/GithubCryptoIPA/Cryptonance.xcarchive"
