@@ -27,5 +27,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: iOS app
-        run: xcodebuild -project /Volumes/HDD/Vijay\ Parmar\ iOS/GithubProject/Cryptonance-iOS/Cryptonance.xcworkspace -scheme Cryptonance -archivePath /Volumes/HDD/Vijay\ Parmar\ iOS/GithubProject/Cryptonance-iOS/GithubCryptoIPA/Cryptonance.xcarchive archive
+        run: xcodebuild -project Cryptonance.xcodeproj -scheme Cryptonance -archivePath /GithubCryptoIPA/Cryptonance.xcarchive archive
 
