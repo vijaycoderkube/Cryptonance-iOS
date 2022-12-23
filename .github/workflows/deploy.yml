@@ -18,7 +18,10 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: macOS-12
+    runs-on: macos-latest
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=15.2,name=iPhone 13 Pro Max']
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,6 +29,8 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: iOS app
-        run: xcodebuild -project Cryptonance.xcodeproj -scheme Cryptonance -archivePath /GithubCryptoIPA/Cryptonance.xcarchive archive
-
+      - name: Build
+        run: |
+        xcodebuild clean build -project Cryptonance.xcodeproj -scheme Cryptonance -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+        env:
+        destination: ${{ matrix.destination }}
